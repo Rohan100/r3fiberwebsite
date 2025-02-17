@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import './App.css'
 import { AmbientLight, DirectionalLight, SphereGeometry } from 'three'
+import { ModelNode } from 'three/webgpu'
+import ModelViewer from './Model'
 
 const Cube = () =>  {
   const meshRef = useRef()
@@ -22,11 +24,9 @@ const Cube = () =>  {
 function App() {
   
   return (
-    <Canvas>
-      <directionalLight position={[0, 0, 5]} />
-      <ambientLight  />
-      <Cube />
-    </Canvas>
+
+      <ModelViewer modelUrl={'/simple_satellite_low_poly_free.glb'} />
+
   )
 }
 
